@@ -20,13 +20,16 @@ class Login extends React.Component {
             <div style={{
                 display: 'flex',
                 minHeight: '100vh',
-                flexDirection: 'column'
+                flexDirection: 'column',
+                backgroundColor:'rgb(241, 241, 241)'
             }}>
-                <header style={{ flex: 1, backgroundColor: '#498ee8' }}></header>
-                 
+                <div style={{position:'fixed',top:80,left:50,fontFamily:'monospace',fontSize:50,fontWeight:'bold',
+                letterSpacing:-16,color:'#ea6f5a'}}>
+                    <span>见·著</span>
+                </div>
                     <LoginForm {...this.props} />
                  
-                <footer style={{ display:'flex',flexDirection:'column',justifyContent:'flex-end',  alignItems:'center', flex: 1, backgroundColor: '#fff' }}>
+                <footer style={{ display:'flex',flexDirection:'column',justifyContent:'flex-end',  alignItems:'center', flex: 1 }}>
                     <div style={{color:'#49a9ee'}}>
                         支持谷歌浏览器 版权所有 @2B青年股份有限公司
                     </div>
@@ -34,18 +37,6 @@ class Login extends React.Component {
 
 
             </div>
-
-            //     <div className={styles.login}>
-
-            //         <LoginForm {...this.props} />
-            //         <div className={styles.footer}>
-            //             <div className={styles.footerTitle}>
-            //                 <div className={styles.footerFont}>
-            //                     支持谷歌浏览器 版权所有 @安徽蓝盾光电子股份有限公司
-            // </div>
-            //             </div>
-            //         </div>
-            //     </div>
         )
     }
 }
