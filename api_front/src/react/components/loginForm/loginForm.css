@@ -59,30 +59,90 @@
 }
 
 .box {
-    margin-top: 30px;
-}
-
-.box h6{
     position: relative;
-    margin: 0 0 20px;
-    font-size: 12px;
+    margin-top: 40px;
+    padding: 20px 10px;
+    border-top: 1px solid #cccccc;
+    /* border-radius: 2px; */
+}
+
+.box::before {
+    content: attr(title);
+    position: absolute;
+    padding: 2px 20px;
     color: #b5b5b5;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transform: translate(57%, -150%);
+    background-color: #fff;
 }
 
-.box h6::before {
-    content: "";
-    border-top: 1px solid #b5b5b5;
-    display: block;
-    position: absolute;
-    width: 60px;
-    top: 5px;
+:global .reg_btn .ant-btn-primary {
+    padding: 0 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    height: 32px;
+    color: #fff;
+    background-color: #42c02e !important;
+    border-color: #42c02e !important;
 }
 
-.box h6::after {
-    content: "";
-    border-top: 1px solid #b5b5b5;
-    display: block;
-    position: absolute;
-    width: 60px;
-    top: 5px;
+.ball1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute; */
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+    font-size: 20px;
+    border: 1px solid #e05244;
+    border-radius: 50%;
+    color: #FFF;
+    background: #e05244;
+}
+
+.ball2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute; */
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+    font-size: 20px;
+    border: 1px solid #319B4D;
+    border-radius: 100%;
+    color: #FFF;
+    background: #319B4D;
+}
+
+.ball3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute; */
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+    font-size: 20px;
+    border: 1px solid #498ad5;
+    border-radius: 50%;
+    color: #FFF;
+    background: #498ad5;
+}
+
+.ball4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute; */
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+    font-size: 10px;
+    border: 1px solid hsla(0, 0%, 71%, .2);
+    border-radius: 100%;
+    color: #bfbfbf;
+    background: hsla(0, 0%, 71%, .2);
 }

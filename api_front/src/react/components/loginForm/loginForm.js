@@ -25,7 +25,7 @@ class LoginF extends React.Component {
         };
         //this.handleSubmit=this.handleSubmit.bind(this);
     }
-    componentDidMount() {}
+    componentDidMount() { }
     componentWillReceiveProps(nextProps) {
         if (this.state.loading) {
             ///登录成功
@@ -39,22 +39,9 @@ class LoginF extends React.Component {
                 this
                     .props
                     .querySysdic();
-                this
-                    .props
-                    .queryArea();
-                this
-                    .props
-                    .queryFactor();
-                this
-                    .props
-                    .queryMonitorSite();
-                //区域关联监测点组
-                this
-                    .props
-                    .queryMonitorSiteGroup();
 
             } else {
-                this.setState({loading: false, loginFlag: nextProps.loginRet});
+                this.setState({ loading: false, loginFlag: nextProps.loginRet });
             }
         }
 
@@ -70,7 +57,7 @@ class LoginF extends React.Component {
                         username: values.userName,
                         password: values.password
                     };
-                    this.setState({loading: true, loginFlag: 0});
+                    this.setState({ loading: true, loginFlag: 0 });
                     this
                         .props
                         .submitClick(param);
@@ -87,7 +74,7 @@ class LoginF extends React.Component {
     }
 
     render() {
-        const {getFieldDecorator} = this.props.form;
+        const { getFieldDecorator } = this.props.form;
         let activeStyle = {
             padding: '10px',
             fontWeight: 700,
@@ -108,8 +95,8 @@ class LoginF extends React.Component {
                         <a
                             id='login'
                             style={this.state.loginTable
-                            ? activeStyle
-                            : unActiveStyle}
+                                ? activeStyle
+                                : unActiveStyle}
                             onClick={this.lor}>
                             登录
                         </a>
@@ -117,8 +104,8 @@ class LoginF extends React.Component {
                         <a
                             id='reg'
                             style={!this.state.loginTable
-                            ? activeStyle
-                            : unActiveStyle}
+                                ? activeStyle
+                                : unActiveStyle}
                             onClick={this.lor}>
                             注册
                         </a>
@@ -126,84 +113,6 @@ class LoginF extends React.Component {
                 </h4>
                 {this.state.loginTable
                     ? <Form onSubmit={this.handleSubmit} className={styles.loginForm}>
-                            <FormItem >
-                                {getFieldDecorator('userName', {
-                                    rules: [
-                                        {
-                                            required: true,
-                                            message: '请输入用户名!'
-                                        }
-                                    ]
-                                })(
-                                    <Input
-                                        prefix={< Icon type = "user" style = {{ fontSize: 13 }}/>}
-                                        placeholder="用户名"/>
-                                )}
-                            </FormItem>
-                            <FormItem >
-                                {getFieldDecorator('password', {
-                                    rules: [
-                                        {
-                                            required: true,
-                                            message: '请输入密码!'
-                                        }
-                                    ]
-                                })(
-                                    <Input
-                                        prefix={< Icon type = "lock" style = {{ fontSize: 13 }}/>}
-                                        type="password"
-                                        placeholder="密码"/>
-                                )}
-                            </FormItem>
-
-                            <FormItem >
-                                <div
-                                    style={{
-                                    display: 'flex',
-                                    justifyContent: 'space-between'
-                                }}>
-                                    {getFieldDecorator('remember', {
-                                        valuePropName: 'checked',
-                                        initialValue: true
-                                    })(
-                                        <Checkbox >
-                                            记住密码
-                                        </Checkbox>
-                                    )}
-                                    <a style={{color:'gray'}}>
-                                        登录遇到问题？
-                                    </a>
-                                </div>
-                                <Button
-                                    type="primary"
-                                    htmlType="submit"
-                                    className={styles.loginFormButton}
-                                    loading={this.state.loading}>
-                                    登陆
-                                </Button>
-
-                                <div
-                                    style={{
-                                    display: this.state.loginFlag > 0
-                                        ? 'block'
-                                        : 'none'
-                                }}>
-                                    <Tooltip title="登录失败">
-                                        <span
-                                            style={{
-                                            color: "red"
-                                        }}>用户名密码不匹配.
-                                        </span>
-                                    </Tooltip >
-                                </div>
-                            </FormItem >
-                            <div className={styles.box}>
-                                <h6>社交账号登录</h6>
-                            </div>
-                            
-
-                        </Form>
-                    : <Form onSubmit={this.handleSubmit} className={styles.loginForm}>
                         <FormItem >
                             {getFieldDecorator('userName', {
                                 rules: [
@@ -214,23 +123,9 @@ class LoginF extends React.Component {
                                 ]
                             })(
                                 <Input
-                                    prefix={< Icon type = "user" style = {{ fontSize: 13 }}/>}
-                                    placeholder="用户名"/>
-                            )}
-                        </FormItem>
-                        <FormItem >
-                            {getFieldDecorator('tel', {
-                                rules: [
-                                    {
-                                        required: true,
-                                        message: '请输入用户名!'
-                                    }
-                                ]
-                            })(
-                                <Input
-                                    prefix={< Icon type = "tablet" style = {{ fontSize: 13 }}/>}
-                                    placeholder="用户名"/>
-                            )}
+                                    prefix={< Icon type="user" style={{ fontSize: 13 }} />}
+                                    placeholder="用户名" />
+                                )}
                         </FormItem>
                         <FormItem >
                             {getFieldDecorator('password', {
@@ -242,36 +137,154 @@ class LoginF extends React.Component {
                                 ]
                             })(
                                 <Input
-                                    prefix={< Icon type = "lock" style = {{ fontSize: 13 }}/>}
+                                    prefix={< Icon type="lock" style={{ fontSize: 13 }} />}
                                     type="password"
-                                    placeholder="密码"/>
-                            )}
+                                    placeholder="密码" />
+                                )}
                         </FormItem>
+
                         <FormItem >
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between'
+                                }}>
+                                {getFieldDecorator('remember', {
+                                    valuePropName: 'checked',
+                                    initialValue: true
+                                })(
+                                    <Checkbox >
+                                        记住密码
+                                        </Checkbox>
+                                    )}
+                                <a style={{ color: 'gray' }}>
+                                    登录遇到问题？
+                                    </a>
+                            </div>
                             <Button
                                 type="primary"
                                 htmlType="submit"
                                 className={styles.loginFormButton}
                                 loading={this.state.loading}>
                                 登陆
-                            </Button>
+                                </Button>
+
                             <div
                                 style={{
-                                display: this.state.loginFlag > 0
-                                    ? 'block'
-                                    : 'none'
-                            }}>
+                                    display: this.state.loginFlag > 0
+                                        ? 'block'
+                                        : 'none'
+                                }}>
+                                <Tooltip title="登录失败">
+                                    <span
+                                        style={{
+                                            color: "red"
+                                        }}>用户名密码不匹配.
+                                        </span>
+                                </Tooltip >
+                            </div>
+                        </FormItem >
+                        <div title="社交账号登录" className={styles.box}>
+                            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                <div className={styles.ball1}><i className="fa fa-weibo"></i></div>
+                                <div className={styles.ball2}><i className="fa fa-weixin"></i></div>
+                                <div className={styles.ball3}><i className="fa fa fa-qq"></i></div>
+                                <div className={styles.ball4}><span>其他</span></div>
+                            </div>
+                        </div>
+
+                    </Form>
+                    : <Form onSubmit={this.handleSubmit} className={styles.loginForm}>
+                        <FormItem >
+                            {getFieldDecorator('userName', {
+                                rules: [
+                                    {
+                                        required: true,
+                                        message: '请输入用户名!'
+                                    }
+                                ]
+                            })(
+                                <Input
+                                    prefix={< Icon type="user" style={{ fontSize: 13 }} />}
+                                    placeholder="用户名" />
+                                )}
+                        </FormItem>
+                        <FormItem >
+                            {getFieldDecorator('tel', {
+                                rules: [
+                                    {
+                                        required: true,
+                                        message: '手机号!'
+                                    }
+                                ]
+                            })(
+                                <Input
+                                    prefix={< Icon type="tablet" style={{ fontSize: 13 }} />}
+                                    placeholder="手机号" />
+                                )}
+                        </FormItem>
+                        <FormItem >
+                            {getFieldDecorator('password', {
+                                rules: [
+                                    {
+                                        required: true,
+                                        message: '请输入密码!'
+                                    }
+                                ]
+                            })(
+                                <Input
+                                    prefix={< Icon type="lock" style={{ fontSize: 13 }} />}
+                                    type="password"
+                                    placeholder="密码" />
+                                )}
+                        </FormItem>
+                        <FormItem >
+                            <div className="reg_btn">
+                                <Button
+                                    type="primary"
+                                    htmlType="submit"
+                                    className={styles.loginFormButton}
+                                    loading={this.state.loading}>
+                                    注册
+                            </Button>
+                            </div>
+                            <div
+                                style={{
+                                    display: this.state.loginFlag > 0
+                                        ? 'block'
+                                        : 'none'
+                                }}>
                                 <Tooltip title="注册失败">
                                     <span
                                         style={{
-                                        color: "red"
-                                    }}>用户名密码不匹配.
+                                            color: "red"
+                                        }}>用户名密码不匹配.
                                     </span>
                                 </Tooltip >
                             </div>
                         </FormItem >
+                        <FormItem >
+                            <p style={{
+                                padding: 0,
+                                textAlign: 'center',
+                                fontSize: '12px',
+                                lineHeight: '20px',
+                                color: '#969696'
+                            }}>
+                                点击 “注册” 即表示您同意并愿意遵守见著
+                                <br />
+                                <a href="">用户协议 </a>和 <a href="">隐私政策</a> 。
+                            </p>
+                        </FormItem >
+                        <div title="社交账号注册" className={styles.box}>
+                            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                <div className={styles.ball1}><i className="fa fa-weibo"></i></div>
+                                <div className={styles.ball2}><i className="fa fa-weixin"></i></div>
+                                <div className={styles.ball3}><i className="fa fa fa-qq"></i></div>
+                            </div>
+                        </div>
                     </Form>
-}
+                }
 
             </div >
 

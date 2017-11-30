@@ -21,7 +21,8 @@ class Login extends React.Component {
                 display: 'flex',
                 minHeight: '100vh',
                 flexDirection: 'column',
-                backgroundColor:'rgb(241, 241, 241)'
+                backgroundColor:'rgb(241, 241, 241)',
+                overflow:'auto'
             }}>
                 <div style={{position:'fixed',top:80,left:50,fontFamily:'monospace',fontSize:50,fontWeight:'bold',
                 letterSpacing:-16,color:'#ea6f5a'}}>
@@ -31,7 +32,7 @@ class Login extends React.Component {
                  
                 <footer style={{ display:'flex',flexDirection:'column',justifyContent:'flex-end',  alignItems:'center', flex: 1 }}>
                     <div style={{color:'#49a9ee'}}>
-                        支持谷歌浏览器 版权所有 @2B青年股份有限公司
+                        支持谷歌浏览器 版权所有 @2B青年团队
                     </div>
                 </footer>
 
