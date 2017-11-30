@@ -20,7 +20,7 @@ class Login extends React.Component {
             <div style={{
                 display: 'flex',
                 height:'100%',
-                minHeight: '100hv',
+                minHeight: '150hv',
                 flexDirection: 'column',
                 backgroundColor: 'rgb(241, 241, 241)',
                 overflow: 'auto'
