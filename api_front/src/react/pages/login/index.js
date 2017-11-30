@@ -19,19 +19,31 @@ class Login extends React.Component {
         return (
             <div style={{
                 display: 'flex',
-                minHeight: '100vh',
+                height:'100%',
+                minHeight: '100hv',
                 flexDirection: 'column',
-                backgroundColor:'rgb(241, 241, 241)',
-                overflow:'auto'
+                backgroundColor: 'rgb(241, 241, 241)',
+                overflow: 'auto'
             }}>
-                <div style={{position:'fixed',top:80,left:50,fontFamily:'monospace',fontSize:50,fontWeight:'bold',
-                letterSpacing:-16,color:'#ea6f5a'}}>
-                    <span>见·著</span>
+                <div style={{
+                    position: 'absolute',
+                    top: '56px',
+                    marginLeft: '50px', fontFamily: 'monospace', fontSize: 50, fontWeight: 'bold',
+                    letterSpacing: -16, color: '#ea6f5a'
+                }}>
+                    <span>雕·虫</span>
                 </div>
-                    <LoginForm {...this.props} />
-                 
-                <footer style={{ display:'flex',flexDirection:'column',justifyContent:'flex-end',  alignItems:'center', flex: 1 }}>
-                    <div style={{color:'#49a9ee'}}>
+                <div style={{
+                    position: 'absolute',
+                    top: '114px',
+                    marginLeft: '33px', fontFamily: 'monospace', fontSize: 25, fontWeight: 'bold',
+                    letterSpacing:4, color: '#FFF'
+                }}>
+                    <span>DIAOCHONG</span></div>
+                <LoginForm {...this.props} />
+
+                <footer style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'center', flex: 1 }}>
+                    <div style={{ color: '#49a9ee' }}>
                         支持谷歌浏览器 版权所有 @2B青年团队
                     </div>
                 </footer>

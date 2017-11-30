@@ -5,14 +5,7 @@ import React from 'react';
 import styles from './loginForm.css';
 // import logImg from "../../../public/images/landun_logo.png";
 import logImg from "../../../idea_large.svg";
-import {
-    Form,
-    Icon,
-    Input,
-    Button,
-    Checkbox,
-    Tooltip
-} from 'antd';
+import { Form, Icon, Input, Button, Checkbox, Tooltip } from 'antd';
 const FormItem = Form.Item;
 
 class LoginF extends React.Component {
@@ -31,14 +24,10 @@ class LoginF extends React.Component {
             ///登录成功
             if (nextProps.loginRet === 0) {
                 nextProps.location.pathname = '/main/monitor';
-                nextProps
-                    .history
-                    .push(nextProps.location);
+                nextProps.history.push(nextProps.location);
 
                 // //请求数据字典
-                this
-                    .props
-                    .querySysdic();
+                this.props.querySysdic();
 
             } else {
                 this.setState({ loading: false, loginFlag: nextProps.loginRet });
@@ -46,30 +35,37 @@ class LoginF extends React.Component {
         }
 
     }
-    handleSubmit = (e) => {
+    handleLoginSubmit = (e) => {
         e.preventDefault();
-        this
-            .props
-            .form
-            .validateFields((err, values) => {
-                if (!err) {
-                    let param = {
-                        username: values.userName,
-                        password: values.password
-                    };
-                    this.setState({ loading: true, loginFlag: 0 });
-                    this
-                        .props
-                        .submitClick(param);
-                }
-            });
+        this.props.form.validateFields((err, values) => {
+            if (!err) {
+                let param = {
+                    username: values.userName,
+                    password: values.password
+                };
+                this.setState({ loading: true, loginFlag: 0 });
+                this.props.submitClick(param);
+            }
+        });
+    };
+
+    handleRegSubmit = (e) => {
+        e.preventDefault();
+        this.props.form.validateFields((err, values) => {
+            if (!err) {
+                let param = {
+                    username: values.userName,
+                    password: values.password
+                };
+                this.setState({ loading: true, loginFlag: 0 });
+                this.props.submitClick(param);
+            }
+        });
     };
 
     lor = (e) => {
         this.setState({
-            loginTable: (e.target.id == 'login'
-                ? true
-                : false)
+            loginTable: (e.target.id == 'login' ? true : false)
         });
     }
 
@@ -92,39 +88,26 @@ class LoginF extends React.Component {
             <div className={styles.formLogin}>
                 <h4 className={styles.title}>
                     <div className={styles.header}>
-                        <a
-                            id='login'
-                            style={this.state.loginTable
-                                ? activeStyle
-                                : unActiveStyle}
+                        <a id='login' style={this.state.loginTable ? activeStyle : unActiveStyle}
                             onClick={this.lor}>
                             登录
                         </a>
                         <b>·</b>
-                        <a
-                            id='reg'
-                            style={!this.state.loginTable
-                                ? activeStyle
-                                : unActiveStyle}
-                            onClick={this.lor}>
+                        <a id='reg' style={!this.state.loginTable ? activeStyle : unActiveStyle} onClick={this.lor}>
                             注册
                         </a>
                     </div >
                 </h4>
                 {this.state.loginTable
-                    ? <Form onSubmit={this.handleSubmit} className={styles.loginForm}>
+                    ? <Form onSubmit={this.handleLoginSubmit} className={styles.loginForm}>
                         <FormItem >
                             {getFieldDecorator('userName', {
-                                rules: [
-                                    {
-                                        required: true,
-                                        message: '请输入用户名!'
-                                    }
-                                ]
+                                rules: [{
+                                    required: true,
+                                    message: '请输入用户名!'
+                                }]
                             })(
-                                <Input
-                                    prefix={< Icon type="user" style={{ fontSize: 13 }} />}
-                                    placeholder="用户名" />
+                                <Input prefix={< Icon type="user" style={{ fontSize: 13 }} />} placeholder="用户名" />
                                 )}
                         </FormItem>
                         <FormItem >
@@ -136,8 +119,7 @@ class LoginF extends React.Component {
                                     }
                                 ]
                             })(
-                                <Input
-                                    prefix={< Icon type="lock" style={{ fontSize: 13 }} />}
+                                <Input prefix={< Icon type="lock" style={{ fontSize: 13 }} />}
                                     type="password"
                                     placeholder="密码" />
                                 )}
@@ -169,12 +151,9 @@ class LoginF extends React.Component {
                                 登陆
                                 </Button>
 
-                            <div
-                                style={{
-                                    display: this.state.loginFlag > 0
-                                        ? 'block'
-                                        : 'none'
-                                }}>
+                            <div style={{
+                                display: this.state.loginFlag > 0 ? 'block' : 'none'
+                            }}>
                                 <Tooltip title="登录失败">
                                     <span
                                         style={{
@@ -194,7 +173,7 @@ class LoginF extends React.Component {
                         </div>
 
                     </Form>
-                    : <Form onSubmit={this.handleSubmit} className={styles.loginForm}>
+                    : <Form onSubmit={this.handleRegSubmit} className={styles.loginForm}>
                         <FormItem >
                             {getFieldDecorator('userName', {
                                 rules: [

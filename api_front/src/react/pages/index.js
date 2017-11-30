@@ -10,7 +10,7 @@ import * as act from '../../redux/actions/login';
 import { MainMenu } from '../../utils/menu';
 import { SideRoute, ContentRoute } from '../routes'
 import styles from './index'
-const { Header, Sider ,Content} = Layout;
+const { Header, Sider, Content, Footer } = Layout;
 
 message.config({
     top: 50,
@@ -66,37 +66,55 @@ export class mainPage extends React.Component {
         }
 
         return (
-            <Layout style={{ width: '100%', height: '100%' }} >
-                <Header style={{ height: '80px', backgroundColor: '#4a8de6', display: 'flex', justifyContent: 'space-between', padding: 0 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', float: 'left' }}>
-                        <img style={{ margin: '10px 10px 0 10px' }} src={logo} />
-                        <span style={{ whiteSpace: 'nowrap', height: '60px', color: '#FFF', fontSize: '26px', fontWeight: 'bold', marginRight: '30px' }}
-                        > 灵 感 创 意 无 限 平 台</span>
-
-                        <span style={{ whiteSpace: 'nowrap', height: '60px', color: 'white', fontSize: '10px' }}>
-                            {'欢迎您：' + this.state.userName}</span>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', flexDirection: "row", float: 'right' }}>
-                        <MainMenu />
-                        <div style={{ display: 'inline-block', width: '80px' }}>
-                            <Button type="danger" shape="circle" icon="logout" onClick={this.logOut} />
-                        </div>
-                    </div>
-                </Header>
+            <div>
                 <Layout>
-                    {
-                        this.props.location.pathname !== '/main/monitor' ?
-                            <Sider
-                                collapsible
-                                collapsed={this.state.collapsed}
-                                onCollapse={this.onCollapse}
-                            ><SideRoute /> </Sider>
-                            : null
-                    }
-                    <Content><ContentRoute/></Content>
-                    
+                    <div style={{ display: 'block' }}>
+                        <Header style={{ display: 'flex', justifyContent: 'space-between',alignContent:'center', height: '56px', padding: 0, backgroundColor: '#fff', borderColor: '#f0f0f0', }}>
+                            <a style={{
+                                 fontSize: 25,fontWeight:'600',marginTop:'-4px',padding: '0px 25px 0px 20px',letterSpacing: 2, color: '#ea6f5a',height: 56,
+                            }}>雕虫</a>
+                            <div></div>
+                            <div className="header_button" style={{padding:'0 10px'}}>
+                            <Button type="danger" ghost className="register">注册</Button>
+                            <Button type="danger" className="acticle">写文章</Button>
+                            </div>
+                        </Header>
+                    </div>
+                    <Content style={{height:800}}>Content</Content>
+                    <Footer>Footer</Footer>
                 </Layout>
-            </Layout>
+            </div>
+            // <Layout style={{ width: '100%', height: '100%' }} >
+            //     <Header style={{ height: '80px', backgroundColor: '#4a8de6', display: 'flex', justifyContent: 'space-between', padding: 0 }}>
+            //         <div style={{ display: 'flex', alignItems: 'center', float: 'left' }}>
+            //             <img style={{ margin: '10px 10px 0 10px' }} src={logo} />
+            //             <span style={{ whiteSpace: 'nowrap', height: '60px', color: '#FFF', fontSize: '26px', fontWeight: 'bold', marginRight: '30px' }}
+            //             > 灵 感 创 意 无 限 平 台</span>
+
+            //             <span style={{ whiteSpace: 'nowrap', height: '60px', color: 'white', fontSize: '10px' }}>
+            //                 {'欢迎您：' + this.state.userName}</span>
+            //         </div>
+            //         <div style={{ display: 'flex', alignItems: 'center', flexDirection: "row", float: 'right' }}>
+            //             <MainMenu />
+            //             <div style={{ display: 'inline-block', width: '80px' }}>
+            //                 <Button type="danger" shape="circle" icon="logout" onClick={this.logOut} />
+            //             </div>
+            //         </div>
+            //     </Header>
+            //     <Layout>
+            //         {
+            //             this.props.location.pathname !== '/main/monitor' ?
+            //                 <Sider
+            //                     collapsible
+            //                     collapsed={this.state.collapsed}
+            //                     onCollapse={this.onCollapse}
+            //                 ><SideRoute /> </Sider>
+            //                 : null
+            //         }
+            //         <Content><ContentRoute/></Content>
+
+            //     </Layout>
+            // </Layout>
         );
     }
 
