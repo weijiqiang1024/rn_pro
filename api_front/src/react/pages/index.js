@@ -59,6 +59,10 @@ export class mainPage extends React.Component {
 
     }
 
+    loginOpt = (e) =>{
+        
+    }
+
     render() {
 
         if (this.props.userInfo) {
@@ -86,7 +90,7 @@ export class mainPage extends React.Component {
                             </div>
                             <div className="header_button" style={{ width: 332, padding: '0 10px' }}>
                                 <a style={{ color: 'gray', padding: '0 15px', fontSize: 15, }}>Aa</a>
-                                <a style={{ color: 'gray', padding: '0 15px', fontSize: 15, }}>登录</a>
+                                <a style={{ color: 'gray', padding: '0 15px', fontSize: 15, }} onClick={this.loginOpt}>登录</a>
                                 <Button type="danger" ghost className="register">注册</Button>
                                 <Button type="danger" className="acticle">写文章</Button>
                             </div>

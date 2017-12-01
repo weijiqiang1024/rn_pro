@@ -14,6 +14,7 @@ class LoginF extends React.Component {
         this.state = {
             loading: false,
             loginFlag: 0,
+            reg_loading:0,
             loginTable: true
         };
         //this.handleSubmit=this.handleSubmit.bind(this);
@@ -23,7 +24,7 @@ class LoginF extends React.Component {
         if (this.state.loading) {
             ///登录成功
             if (nextProps.loginRet === 0) {
-                nextProps.location.pathname = '/main/monitor';
+                nextProps.location.pathname = '/main';
                 nextProps.history.push(nextProps.location);
 
                 // //请求数据字典
@@ -175,7 +176,7 @@ class LoginF extends React.Component {
                     </Form>
                     : <Form onSubmit={this.handleRegSubmit} className={styles.loginForm}>
                         <FormItem >
-                            {getFieldDecorator('userName', {
+                            {getFieldDecorator('reg_name', {
                                 rules: [
                                     {
                                         required: true,
@@ -203,7 +204,7 @@ class LoginF extends React.Component {
                                 )}
                         </FormItem>
                         <FormItem >
-                            {getFieldDecorator('password', {
+                            {getFieldDecorator('reg_password', {
                                 rules: [
                                     {
                                         required: true,
@@ -223,7 +224,7 @@ class LoginF extends React.Component {
                                     type="primary"
                                     htmlType="submit"
                                     className={styles.loginFormButton}
-                                    loading={this.state.loading}>
+                                    loading={this.state.reg_loading}>
                                     注册
                             </Button>
                             </div>

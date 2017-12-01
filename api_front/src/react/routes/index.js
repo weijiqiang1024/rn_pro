@@ -28,8 +28,8 @@ export default class Routes extends Component {
                     <div style={{width:'100%',height:'100%'}}>
                         <div className="listen"></div>
                         <Switch>
-                            <Route exact strict path="/login" component={Login} />
-                            <Route path="/main" component={mainPage} />
+                            <Route exact strict path="/" component={mainPage} />
+                            <Route path="/login" component={Login} />
                             <Redirect from='*' to='/login' />
                         </Switch>
                     </div>
