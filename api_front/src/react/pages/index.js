@@ -4,7 +4,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Icon, Layout, message, Select } from 'antd';
-
+import { Link } from 'react-router-dom';
 import logo from '../../public/images/theme_logo.svg';
 import * as act from '../../redux/actions/login';
 import { MainMenu } from '../../utils/menu';
@@ -90,8 +90,9 @@ export class mainPage extends React.Component {
                             </div>
                             <div className="header_button" style={{ width: 332, padding: '0 10px' }}>
                                 <a style={{ color: 'gray', padding: '0 15px', fontSize: 15, }}>Aa</a>
-                                <a style={{ color: 'gray', padding: '0 15px', fontSize: 15, }} onClick={this.loginOpt}>登录</a>
-                                <Button type="danger" ghost className="register">注册</Button>
+                                <Link to="/login" style={{ color: 'gray', padding: '0 15px', fontSize: 15, }} onClick={this.loginOpt}>登录</Link>
+                                <Button type="danger" ghost className="register"><Link to="/login"/>
+                                <span>注册</span></Button>
                                 <Button type="danger" className="acticle">写文章</Button>
                             </div>
                         </Header>
