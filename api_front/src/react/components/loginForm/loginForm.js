@@ -14,13 +14,20 @@ class LoginF extends React.Component {
         this.state = {
             loading: false,
             loginFlag: 0,
-            reg_loading:0,
+            reg_loading: 0,
             loginTable: true
         };
         //this.handleSubmit=this.handleSubmit.bind(this);
     }
-    componentDidMount() { }
+    componentDidMount() {
+        if (this.props.location.state.opt) {
+            let opt = true;
+            this.props.location.state.opt == 'login' ? opt = true : opt = false;
+            this.setState({ loginTable: opt });
+        }
+    }
     componentWillReceiveProps(nextProps) {
+        debugger;
         if (this.state.loading) {
             ///登录成功
             if (nextProps.loginRet === 0) {
@@ -71,6 +78,7 @@ class LoginF extends React.Component {
     }
 
     render() {
+        debugger;
         const { getFieldDecorator } = this.props.form;
         let activeStyle = {
             padding: '10px',
@@ -165,7 +173,7 @@ class LoginF extends React.Component {
                             </div>
                         </FormItem >
                         <div title="社交账号登录" className={styles.box}>
-                            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <div className={styles.iconLogo}>
                                 <div className={styles.ball1}><i className="fa fa-weibo"></i></div>
                                 <div className={styles.ball2}><i className="fa fa-weixin"></i></div>
                                 <div className={styles.ball3}><i className="fa fa fa-qq"></i></div>
@@ -257,7 +265,7 @@ class LoginF extends React.Component {
                             </p>
                         </FormItem >
                         <div title="社交账号注册" className={styles.box}>
-                            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                            <div className={styles.iconLogo}>
                                 <div className={styles.ball1}><i className="fa fa-weibo"></i></div>
                                 <div className={styles.ball2}><i className="fa fa-weixin"></i></div>
                                 <div className={styles.ball3}><i className="fa fa fa-qq"></i></div>
