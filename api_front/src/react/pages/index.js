@@ -5,7 +5,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Icon, Layout, message, Select } from 'antd';
 import { Link } from 'react-router-dom';
-
 import logo from '../../public/images/theme_logo.svg';
 import * as act from '../../redux/actions/login';
 import { MainMenu } from '../../utils/menu';
@@ -60,8 +59,8 @@ export class mainPage extends React.Component {
 
     }
 
-    loginOpt = (e) =>{
-        
+    loginOpt = (e) => {
+
     }
 
     render() {
@@ -71,16 +70,15 @@ export class mainPage extends React.Component {
         }
 
         return (
-            <div style={{ minWidth: 800, overflowX: 'auto' }}>
-                <Layout>
-                    <div style={{ display: 'block' }}>
+            <section>
+                <header>
                         <Header style={{ display: 'flex', justifyContent: 'space-between', alignContent: 'center', height: '56px', padding: 0, backgroundColor: '#fff', borderColor: '#f0f0f0', }}>
                             <a style={{
                                 width: 100,
                                 fontSize: 25, fontWeight: '600', marginTop: '-4px', padding: '0px 25px 0px 20px', letterSpacing: 2, color: '#ea6f5a', height: 56,
                             }}>雕虫</a>
                             <div className={styles.navbarNav} style={{ display: 'flex', justifyContent: 'space-around', flexDirection: 'row', marginLeft: 0 }}>
-                                <div style={{ float:'left', left: '246px', flexGrow: 1 }}>
+                                <div style={{ float: 'left', left: '246px', flexGrow: 1 }}>
                                     <ul className="nav_ul" style={{ display: 'flex', justifyContent: 'flex-start', flexDirection: 'row', fontSize: 20 }}>
                                         <li>首页</li>
                                         <li>下载APP</li>
@@ -91,16 +89,93 @@ export class mainPage extends React.Component {
                             </div>
                             <div className="header_button" style={{ width: 332, padding: '0 10px' }}>
                                 <a style={{ color: 'gray', padding: '0 15px', fontSize: 15, }}>Aa</a>
-                                <Link to="/login" style={{ color: 'gray', padding: '0 15px', fontSize: 15, }} onClick={this.loginOpt}>登录</Link>
-                                <Button type="danger" ghost className="register">注册</Button>
+                                <Link to={{ pathname: '/login', state: { opt: 'login' } }} style={{ color: 'gray', padding: '0 15px', fontSize: 15, }} onClick={this.loginOpt}>登录</Link>
+                                <Button type="danger" ghost className="register"><Link to={{ pathname: '/login', state: { opt: 'register' } }}>
+                                    <span>注册</span></Link></Button>
                                 <Button type="danger" className="acticle">写文章</Button>
                             </div>
                         </Header>
-                    </div>
-                    <Content style={{ height: 800 }}>Content</Content>
-                    <Footer>Footer</Footer>
-                </Layout>
-            </div>
+                </header>
+                <article>
+                    <h1>上方固定，下方自适应</h1>
+                    <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                     <p>布局要求：上方固定100px,下方自适应。</p>
+                </article>
+            </section>
+            // <div style={{ minWidth: 800, overflowX: 'auto' }}>
+            //     <Layout>
+            //         <div style={{ display: 'block' }}>
+            //             <Header style={{ display: 'flex', justifyContent: 'space-between', alignContent: 'center', height: '56px', padding: 0, backgroundColor: '#fff', borderColor: '#f0f0f0', }}>
+            //                 <a style={{
+            //                     width: 100,
+            //                     fontSize: 25, fontWeight: '600', marginTop: '-4px', padding: '0px 25px 0px 20px', letterSpacing: 2, color: '#ea6f5a', height: 56,
+            //                 }}>雕虫</a>
+            //                 <div className={styles.navbarNav} style={{ display: 'flex', justifyContent: 'space-around', flexDirection: 'row', marginLeft: 0 }}>
+            //                     <div style={{ float: 'left', left: '246px', flexGrow: 1 }}>
+            //                         <ul className="nav_ul" style={{ display: 'flex', justifyContent: 'flex-start', flexDirection: 'row', fontSize: 20 }}>
+            //                             <li>首页</li>
+            //                             <li>下载APP</li>
+            //                             <li><Select size='large' mode="multiple" style={{ width: 130 }}></Select></li>
+            //                         </ul>
+            //                     </div>
+            //                     <div style={{ flexGrow: 2 }}></div>
+            //                 </div>
+            //                 <div className="header_button" style={{ width: 332, padding: '0 10px' }}>
+            //                     <a style={{ color: 'gray', padding: '0 15px', fontSize: 15, }}>Aa</a>
+            //                     <Link to={{ pathname: '/login', state: { opt: 'login' } }} style={{ color: 'gray', padding: '0 15px', fontSize: 15, }} onClick={this.loginOpt}>登录</Link>
+            //                     <Button type="danger" ghost className="register"><Link to={{ pathname: '/login', state: { opt: 'register' } }}>
+            //                         <span>注册</span></Link></Button>
+            //                     <Button type="danger" className="acticle">写文章</Button>
+            //                 </div>
+            //             </Header>
+            //         </div>
+            //         <Content style={{ height: 800 }}>Content</Content>
+            //         <Footer>Footer</Footer>
+            //     </Layout>
+            // </div>
+
+
+
             // <Layout style={{ width: '100%', height: '100%' }} >
             //     <Header style={{ height: '80px', backgroundColor: '#4a8de6', display: 'flex', justifyContent: 'space-between', padding: 0 }}>
             //         <div style={{ display: 'flex', alignItems: 'center', float: 'left' }}>
