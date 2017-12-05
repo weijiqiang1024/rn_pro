@@ -30,7 +30,7 @@ export default class Routes extends Component {
                         <Switch>
                             <Route exact strict path="/" component={mainPage} />
                             <Route path="/login" component={Login} />
-                            <Redirect from='*' to='/login' />
+                            <Redirect from='*' to='/' />
                         </Switch>
                     </div>
                 </BrowserRouter>
