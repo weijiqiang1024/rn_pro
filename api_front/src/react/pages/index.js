@@ -72,27 +72,24 @@ export class mainPage extends React.Component {
         return (
             <section>
                 <header>
-                        <Header style={{ display: 'flex', justifyContent: 'space-between', alignContent: 'center', height: '56px',padding: 0, border:'1px solid #f0f0f0',backgroundColor: '#fff'}}>
+                        <Header style={{ display: 'flex', justifyContent: 'space-between', alignContent: 'center', alignItems:'center', height: '56px',padding: 0, border:'1px solid #f0f0f0',backgroundColor: '#fff'}}>
                             <a style={{
-                                width: 100,
+                                width: 100,flexGrow: 1,
                                 fontSize: 25, fontWeight: '600', marginTop: '-4px', padding: '0px 25px 0px 20px', letterSpacing: 2, color: '#ea6f5a', height: 56,
                             }}>雕虫</a>
-                            <div className={styles.navbarNav} style={{ display: 'flex', justifyContent: 'space-around', flexDirection: 'row', marginLeft: 0 }}>
-                                <div style={{ float: 'left', left: '246px', flexGrow: 1 }}>
+                            <div className={styles.navbarNav} style={{ display: 'flex', flexGrow: 3,justifyContent: 'flex-start', flexDirection: 'row', marginLeft: 0 }}>
                                     <ul className="nav_ul" style={{ display: 'flex', justifyContent: 'flex-start', flexDirection: 'row', fontSize: 20 }}>
                                         <li>首页</li>
                                         <li>下载APP</li>
                                         <li><Select size='large' mode="multiple" style={{ width: 130 }}></Select></li>
                                     </ul>
-                                </div>
-                                <div style={{ flexGrow: 2 }}></div>
                             </div>
-                            <div className="header_button" style={{ width: 332, padding: '0 10px' }}>
+                            <div className="header_button" style={{ display:'flex',justifyContent:'flex-end',     alignItems: 'center',flexGrow:1,width: 332, padding: '0 10px' }}>
                                 <a style={{ color: 'gray', padding: '0 15px', fontSize: 15, }}>Aa</a>
                                 <Link to={{ pathname: '/login', state: { opt: 'login' } }} style={{ color: 'gray', padding: '0 15px', fontSize: 15, }} onClick={this.loginOpt}>登录</Link>
                                 <Button type="danger" ghost className="register"><Link to={{ pathname: '/login', state: { opt: 'register' } }}>
                                     <span>注册</span></Link></Button>
-                                <Button type="danger" className="acticle">写文章</Button>
+                                <Button type="danger" className="acticle"><i className="fa fa-pencil"></i> 写文章</Button>
                             </div>
                         </Header>
                 </header>
