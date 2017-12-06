@@ -94,6 +94,7 @@ export class mainPage extends React.Component {
                                     <div style={{ display: 'flex' }}>
                                         <input type="text" placeholder="你想要的..."/>
                                         <a href="" className={styles.searchGlass}><i className="fa fa-search" aria-hidden="true"></i></a>
+                                        
                                     </div>
                                 </div></li>
                             </ul>
