@@ -33,6 +33,30 @@ article {
     flex-grow: 1;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: 56px !important;
+    padding: 0;
+    border: 1px solid #f0f0f0;
+    background-color: #fff;
+}
+
+.headerTitle {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    flex-grow: 1;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 0px 25px 0px 20px;
+    letter-spacing: 2px;
+    color: #ea6f5a;
+    height: 56px;
+}
+
 .mainFooter {
     margin: 20px 0px 0px;
     min-width: 650px;
@@ -40,17 +64,33 @@ article {
     color: rgba(255, 255, 255, 0.67);
 }
 
-@media (min-width: 768px) {
-    .navbarNav {
-        float: left;
-        margin: 0;
+.headerContent {
+    display: flex;
+    flex-grow: 3;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-left: 0;
+}
+
+.headerContent ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    font-size: 17px;
+    color: #333;
+}
+
+@media(min-width:1360px) {
+    .searchBox {
+        width: 300px !important;
     }
 }
 
-.nav {
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style: none;
+@media(max-width:870px) {
+    .searchBox {
+        width: 100px !important;
+    }
 }
 
 ul>li {
@@ -143,6 +183,21 @@ ul>li {
 
 :global .ant-layout-header {
     line-height: 56px;
+}
+
+.header_button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    width: 332px;
+    padding: 0 10px;
+}
+
+.Aa {
+    color: gray;
+    padding: 0 15px;
+    font-size: 15px;
 }
 
 :global .header_button button {

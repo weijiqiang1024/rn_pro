@@ -79,15 +79,10 @@ export class mainPage extends React.Component {
         return (
             <section>
                 <header>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center', height: '56px !important', padding: 0, border: '1px solid #f0f0f0', backgroundColor: '#fff' }}>
-                        <a style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            width: 100, flexGrow: 1,
-                            fontSize: 25, fontWeight: '600', padding: '0px 25px 0px 20px', letterSpacing: 2, color: '#ea6f5a', height: 56,
-                        }}>雕虫</a>
-                        <div className={styles.navbarNav} style={{ display: 'flex', flexGrow: 3, justifyContent: 'flex-start', flexDirection: 'row', marginLeft: 0 }}>
-                            <ul className="nav_ul" style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', fontSize: 17, color: '#333' }}>
+                    <div className={styles.header}>
+                        <a className={styles.headerTitle}>雕虫</a>
+                        <div className={styles.headerContent}>
+                            <ul>
                                 <li><i className="fa fa-compass"></i> 首页</li>
                                 <li><i className="fa fa-mobile" aria-hidden="true"></i> 下载APP</li>
                                 <li><div className={styles.searchBox} >
@@ -99,9 +94,9 @@ export class mainPage extends React.Component {
                                 </div></li>
                             </ul>
                         </div>
-                        <div className="header_button" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, width: 332, padding: '0 10px' }}>
-                            <a style={{ color: 'gray', padding: '0 15px', fontSize: 15, }}>Aa</a>
-                            <Link to={{ pathname: '/login', state: { opt: 'login' } }} style={{ color: 'gray', padding: '0 15px', fontSize: 15, }} onClick={this.loginOpt}>登录</Link>
+                        <div className="header_button">
+                            <a className={styles.Aa}>Aa</a>
+                            <Link to={{ pathname: '/login', state: { opt: 'login' } }} className={styles.Aa} onClick={this.loginOpt}>登录</Link>
                             <Button type="danger" ghost className="register"><Link to={{ pathname: '/login', state: { opt: 'register' } }}>
                                 <span>注册</span></Link></Button>
                             <Button type="danger" className="acticle"><i className="fa fa-pencil"></i> 写文章</Button>
