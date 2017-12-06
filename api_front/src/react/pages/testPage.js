@@ -1,6 +1,13 @@
-/**
- * Created by zll on 2017/10/12.
+/* 
+ * @Title: $undefined 
+ * @Description: Todo 
+ * @Author: weijq (韦继强) 
+ * @Date: 2017-11-06 18:56:42 
+ * @Last Modified time: 2017-11-06 18:56:42 
+ * @Version:V1.0 
+ * Copyright: Copyright (c) 2017' 
  */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as act from '../../redux/actions/msgTip'

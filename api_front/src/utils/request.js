@@ -1,16 +1,22 @@
-/**
- * Created by zll on 2017/10/9.
+/* 
+ * @Title: $undefined 
+ * @Description: Todo 
+ * @Author: weijq (韦继强) 
+ * @Date: 2017-12-06 18:52:59 
+ * @Last Modified time: 2017-12-06 18:52:59 
+ * @Version:V1.0 
+ * Copyright: Copyright (c) 2017' 
  */
+
 import axios from 'axios';
 import { config } from './config';
 
-const access_token = localStorage.getItem('access_token');
-const username = localStorage.getItem('username');
 export const dataService = {
     postRequest: (params) => {
         return new Promise(function (resolve, reject) {
-            console.log(params);
-            // axios.post(params.reqUrl + '?access_token=' + access_token + '&username=' + username, params.reqParam, config)
+            const access_token = localStorage.getItem('access_token');
+            const username = localStorage.getItem('username');
+            axios.post(params.reqUrl + '?access_token=' + access_token + '&username=' + username, params.reqParam, config)
             axios.post(params.reqUrl, params.reqParam, config)
                 .then(function (res) {
                     resolve(res);
@@ -22,6 +28,8 @@ export const dataService = {
     },
     getRequest: (params) => {
         return new Promise(function (resolve, reject) {
+            const access_token = localStorage.getItem('access_token');
+            const username = localStorage.getItem('username');
             axios.get(params.reqUrl + '?access_token=' + access_token + '&username=' + username, config)
                 .then(function (res) {
                     resolve(res);
@@ -34,33 +42,8 @@ export const dataService = {
 
     reqUrl: {
         login: 'login',
-        userlist:'/user/list',
-        singleQuery: '/api/sys_users/webLogin',
-        sysDic: '/api/sys_dics/listJson',
-        area: '/api/b_areas/list',
-        factor: '/api/b_factors/list',
-        monitorSite: '/api/sys_dic_types/list',
-        monitorSiteGroup: '/api/b_areas/areaSite',
+        register: 'register',
+        userlist: '/user/list',
 
     },
-    sysManageUrl: {
-
-        queryPlat: '/api/sys_users/query_plat',
-        platSubmit: '/api/sys_manage/plat_submit',
-
-        queryMS: '/api/b_sites/list',
-        addMS: '/api/b_sites/add',
-        editMS: '/api/b_sites/siteUpdate',
-        delMS: '/api/b_sites/delete',
-
-        queryUser: '/api/sys_users/list',
-        addUser: '/api/sys_users/add',
-        editUser: '/api/sys_users/userUpdate',
-        delUser: '/api/sys_users/delete',
-
-        queryAlarm: '/api/b_alarms/list',
-        addAlarm: '/api/b_alarms/add',
-        editAlarm: '/api/b_alarms/alarmUpdate',
-        delAlarm: '/api/b_alarms/delete',
-    }
 };

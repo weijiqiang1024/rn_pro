@@ -1,6 +1,13 @@
-/**
- * Created by zll on 2017/10/12.
+/* 
+ * @Title: $undefined 
+ * @Description: Todo 
+ * @Author: weijq@cychina.cn (韦继强) 
+ * @Date: 2017-12-06 18:57:22 
+ * @Last Modified time: 2017-12-06 18:57:22 
+ * @Version:V1.0 
+ * Copyright: Copyright (c) 2017' 
  */
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Icon, Layout, message, Select } from 'antd';
@@ -9,7 +16,7 @@ import logo from '../../public/images/theme_logo.svg';
 import * as act from '../../redux/actions/login';
 import { MainMenu } from '../../utils/menu';
 import { SideRoute, ContentRoute } from '../routes'
-import styles from './index'
+import styles from './index.css'
 const { Header, Sider, Content, Footer } = Layout;
 
 message.config({
@@ -72,138 +79,108 @@ export class mainPage extends React.Component {
         return (
             <section>
                 <header>
-                        <Header style={{ display: 'flex', justifyContent: 'space-between', alignContent: 'center', alignItems:'center', height: '56px',padding: 0, border:'1px solid #f0f0f0',backgroundColor: '#fff'}}>
-                            <a style={{
-                                width: 100,flexGrow: 1,
-                                fontSize: 25, fontWeight: '600', marginTop: '-4px', padding: '0px 25px 0px 20px', letterSpacing: 2, color: '#ea6f5a', height: 56,
-                            }}>雕虫</a>
-                            <div className={styles.navbarNav} style={{ display: 'flex', flexGrow: 3,justifyContent: 'flex-start', flexDirection: 'row', marginLeft: 0 }}>
-                                    <ul className="nav_ul" style={{ display: 'flex', justifyContent: 'flex-start', flexDirection: 'row', fontSize: 20 }}>
-                                        <li>首页</li>
-                                        <li>下载APP</li>
-                                        <li><Select size='large' mode="multiple" style={{ width: 130 }}></Select></li>
-                                    </ul>
-                            </div>
-                            <div className="header_button" style={{ display:'flex',justifyContent:'flex-end',     alignItems: 'center',flexGrow:1,width: 332, padding: '0 10px' }}>
-                                <a style={{ color: 'gray', padding: '0 15px', fontSize: 15, }}>Aa</a>
-                                <Link to={{ pathname: '/login', state: { opt: 'login' } }} style={{ color: 'gray', padding: '0 15px', fontSize: 15, }} onClick={this.loginOpt}>登录</Link>
-                                <Button type="danger" ghost className="register"><Link to={{ pathname: '/login', state: { opt: 'register' } }}>
-                                    <span>注册</span></Link></Button>
-                                <Button type="danger" className="acticle"><i className="fa fa-pencil"></i> 写文章</Button>
-                            </div>
-                        </Header>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center', height: '56px !important', padding: 0, border: '1px solid #f0f0f0', backgroundColor: '#fff' }}>
+                        <a style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            width: 100, flexGrow: 1,
+                            fontSize: 25, fontWeight: '600', padding: '0px 25px 0px 20px', letterSpacing: 2, color: '#ea6f5a', height: 56,
+                        }}>雕虫</a>
+                        <div className={styles.navbarNav} style={{ display: 'flex', flexGrow: 3, justifyContent: 'flex-start', flexDirection: 'row', marginLeft: 0 }}>
+                            <ul className="nav_ul" style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'row', fontSize: 17, color: '#333' }}>
+                                <li><i className="fa fa-compass"></i> 首页</li>
+                                <li><i className="fa fa-mobile" aria-hidden="true"></i> 下载APP</li>
+                                <li><div className={styles.searchBox} >
+                                    <div style={{ display: 'flex' }}>
+                                        <input type="text" placeholder="你想要的..."/>
+                                        <a href="" className={styles.searchGlass}><i className="fa fa-search" aria-hidden="true"></i></a>
+                                    </div>
+                                </div></li>
+                            </ul>
+                        </div>
+                        <div className="header_button" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', flexGrow: 1, width: 332, padding: '0 10px' }}>
+                            <a style={{ color: 'gray', padding: '0 15px', fontSize: 15, }}>Aa</a>
+                            <Link to={{ pathname: '/login', state: { opt: 'login' } }} style={{ color: 'gray', padding: '0 15px', fontSize: 15, }} onClick={this.loginOpt}>登录</Link>
+                            <Button type="danger" ghost className="register"><Link to={{ pathname: '/login', state: { opt: 'register' } }}>
+                                <span>注册</span></Link></Button>
+                            <Button type="danger" className="acticle"><i className="fa fa-pencil"></i> 写文章</Button>
+                        </div>
+                    </div>
                 </header>
                 <article>
-                    <h1>上方固定，下方自适应</h1>
-                    <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
-                     <p>上方固定，下方自适应</p>
+                    <div className={styles.content}>
+                        <div className={styles.leftGrow}></div>
+                        <div id="content" className={styles.midContent}>
+                            <h1>上方固定，下方自适应</h1>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                            <p>上方固定，下方自适应</p>
+                        </div>
+                        <div className={styles.rightGrow}></div>
+                    </div>
                 </article>
+                <footer className={styles.mainFooter}>
+                    <div className={styles.footer}>
+                        <div className={styles.infoRow1}>
+                            <a href="">关于雕虫</a>
+                            <em>·</em>
+                            <a href="">联系我们</a>
+                            <em>·</em>
+                            <a href="">加入我们</a>
+                            <em>·</em>
+                            <a href="">雕虫出版</a>
+                            <em>·</em>
+                            <a href="">品牌与徽标</a>
+                            <em>·</em>
+                            <a href="">帮助中心</a>
+                            <em>·</em>
+                            <a href="">合作伙伴</a>
+                        </div>
+                        <div className={styles.infoRow2}>
+                            <span>©2017-2020 合肥2B青年团队 / 雕虫 / 皖ICP备11018329号-5 / 皖公网安备31010402002252号 </span>
+                        </div>
+                    </div>
+                </footer>
             </section>
-            // <div style={{ minWidth: 800, overflowX: 'auto' }}>
-            //     <Layout>
-            //         <div style={{ display: 'block' }}>
-            //             <Header style={{ display: 'flex', justifyContent: 'space-between', alignContent: 'center', height: '56px', padding: 0, backgroundColor: '#fff', borderColor: '#f0f0f0', }}>
-            //                 <a style={{
-            //                     width: 100,
-            //                     fontSize: 25, fontWeight: '600', marginTop: '-4px', padding: '0px 25px 0px 20px', letterSpacing: 2, color: '#ea6f5a', height: 56,
-            //                 }}>雕虫</a>
-            //                 <div className={styles.navbarNav} style={{ display: 'flex', justifyContent: 'space-around', flexDirection: 'row', marginLeft: 0 }}>
-            //                     <div style={{ float: 'left', left: '246px', flexGrow: 1 }}>
-            //                         <ul className="nav_ul" style={{ display: 'flex', justifyContent: 'flex-start', flexDirection: 'row', fontSize: 20 }}>
-            //                             <li>首页</li>
-            //                             <li>下载APP</li>
-            //                             <li><Select size='large' mode="multiple" style={{ width: 130 }}></Select></li>
-            //                         </ul>
-            //                     </div>
-            //                     <div style={{ flexGrow: 2 }}></div>
-            //                 </div>
-            //                 <div className="header_button" style={{ width: 332, padding: '0 10px' }}>
-            //                     <a style={{ color: 'gray', padding: '0 15px', fontSize: 15, }}>Aa</a>
-            //                     <Link to={{ pathname: '/login', state: { opt: 'login' } }} style={{ color: 'gray', padding: '0 15px', fontSize: 15, }} onClick={this.loginOpt}>登录</Link>
-            //                     <Button type="danger" ghost className="register"><Link to={{ pathname: '/login', state: { opt: 'register' } }}>
-            //                         <span>注册</span></Link></Button>
-            //                     <Button type="danger" className="acticle">写文章</Button>
-            //                 </div>
-            //             </Header>
-            //         </div>
-            //         <Content style={{ height: 800 }}>Content</Content>
-            //         <Footer>Footer</Footer>
-            //     </Layout>
-            // </div>
-
-
-
-            // <Layout style={{ width: '100%', height: '100%' }} >
-            //     <Header style={{ height: '80px', backgroundColor: '#4a8de6', display: 'flex', justifyContent: 'space-between', padding: 0 }}>
-            //         <div style={{ display: 'flex', alignItems: 'center', float: 'left' }}>
-            //             <img style={{ margin: '10px 10px 0 10px' }} src={logo} />
-            //             <span style={{ whiteSpace: 'nowrap', height: '60px', color: '#FFF', fontSize: '26px', fontWeight: 'bold', marginRight: '30px' }}
-            //             > 灵 感 创 意 无 限 平 台</span>
-
-            //             <span style={{ whiteSpace: 'nowrap', height: '60px', color: 'white', fontSize: '10px' }}>
-            //                 {'欢迎您：' + this.state.userName}</span>
-            //         </div>
-            //         <div style={{ display: 'flex', alignItems: 'center', flexDirection: "row", float: 'right' }}>
-            //             <MainMenu />
-            //             <div style={{ display: 'inline-block', width: '80px' }}>
-            //                 <Button type="danger" shape="circle" icon="logout" onClick={this.logOut} />
-            //             </div>
-            //         </div>
-            //     </Header>
-            //     <Layout>
-            //         {
-            //             this.props.location.pathname !== '/main/monitor' ?
-            //                 <Sider
-            //                     collapsible
-            //                     collapsed={this.state.collapsed}
-            //                     onCollapse={this.onCollapse}
-            //                 ><SideRoute /> </Sider>
-            //                 : null
-            //         }
-            //         <Content><ContentRoute/></Content>
-
-            //     </Layout>
-            // </Layout>
         );
     }
 

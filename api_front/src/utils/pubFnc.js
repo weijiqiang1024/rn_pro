@@ -1,10 +1,14 @@
-/*
- * @Author: wei.jq 
- * @Date: 2017-10-30 17:09:56 
- * @Last Modified by: wei.jq
- * @Last Modified time: 2017-10-30 17:10:31
- * @Function:public function
+/* 
+ * @Title: $undefined 
+ * @Description: Todo 
+ * @Author: weijq@cychina.cn (韦继强) 
+ * @Date: 2017-12-06 18:53:56 
+ * @Last Modified by: weijq@cychina.cn (韦继强) 
+ * @Last Modified time: 2017-12-06 18:53:56 
+ * @Version:V1.0 
+ * Copyright: Copyright (c) 2017' 
  */
+
 
 export const pubFunc = {
     
