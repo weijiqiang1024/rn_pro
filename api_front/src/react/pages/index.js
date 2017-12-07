@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 import { Button, Icon, Layout, message, Select } from 'antd';
 import { Link } from 'react-router-dom';
 import logo from '../../public/images/theme_logo.svg';
+import user from '../../public/images/uservip.png';
 import * as act from '../../redux/actions/login';
 import { MainMenu } from '../../utils/menu';
 import { SideRoute, ContentRoute } from '../routes'
@@ -87,18 +88,25 @@ export class mainPage extends React.Component {
                                 <li><i className="fa fa-mobile" aria-hidden="true"></i> 下载APP</li>
                                 <li><div className={styles.searchBox} >
                                     <div style={{ display: 'flex' }}>
-                                        <input type="text" placeholder="你想要的..."/>
+                                        <input type="text" placeholder="你想要的..." />
                                         <a href="" className={styles.searchGlass}><i className="fa fa-search" aria-hidden="true"></i></a>
-                                        
+
                                     </div>
                                 </div></li>
                             </ul>
                         </div>
-                        <div className="header_button">
+                        <div className="header_button" style={{display:'flex',alignItems:'center'}}>
                             <a className={styles.Aa}>Aa</a>
-                            <Link to={{ pathname: '/login', state: { opt: 'login' } }} className={styles.Aa} onClick={this.loginOpt}>登录</Link>
-                            <Button type="danger" ghost className="register"><Link to={{ pathname: '/login', state: { opt: 'register' } }}>
-                                <span>注册</span></Link></Button>
+                            {this.state.userName ?
+                                <span>
+                                    <Link to={{ pathname: '/login', state: { opt: 'login' } }} className={styles.Aa} onClick={this.loginOpt}>登录</Link>
+                                    <Button type="danger" ghost className="register"><Link to={{ pathname: '/login', state: { opt: 'register' } }}>
+                                        <span>注册</span></Link></Button>
+                                </span>
+                                : <span className={styles.userSpan}>
+                                    <img src={user} alt="" className={styles.userImg}/>
+                                    <span className={styles.dropFlag}></span>
+                                </span>}
                             <Button type="danger" className="acticle"><i className="fa fa-pencil"></i> 写文章</Button>
                         </div>
                     </div>

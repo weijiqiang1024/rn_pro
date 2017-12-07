@@ -81,6 +81,12 @@ article {
     color: #333;
 }
 
+@media(min-width:1440px) {
+    .searchBox {
+        width: 400px !important;
+    }
+}
+
 @media(min-width:1360px) {
     .searchBox {
         width: 300px !important;
@@ -198,6 +204,36 @@ ul>li {
     color: gray;
     padding: 0 15px;
     font-size: 15px;
+}
+
+.userImg {
+    border: 1px solid #eee;
+    border-radius: 50%;
+}
+
+.userSpan {
+    width: 80px;
+    height: 40px;
+    margin: auto 10px;
+}
+
+.dropFlag {
+    margin: auto 6px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #999;
+}
+
+.ball {
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #e05244;
+    border-radius: 50%;
+    color: #FFF;
+    background: #e05244;
 }
 
 :global .header_button button {

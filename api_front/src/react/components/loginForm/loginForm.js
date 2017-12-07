@@ -266,7 +266,7 @@ class LoginF extends React.Component {
                                 lineHeight: '20px',
                                 color: '#969696'
                             }}>
-                                点击 “注册” 即表示您同意并愿意遵守见著
+                                点击 “注册” 即表示您同意并愿意遵守雕虫
                                 <br />
                                 <a href="">用户协议 </a>和 <a href="">隐私政策</a> 。
                             </p>
