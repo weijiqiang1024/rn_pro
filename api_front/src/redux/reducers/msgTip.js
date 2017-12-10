@@ -1,5 +1,5 @@
 /**
- * Created by zll on 2017/10/11.
+ * Created by weijq on 2017/10/11.
  */
 import * as act from '../actions/msgTip';
 

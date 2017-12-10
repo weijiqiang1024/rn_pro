@@ -32,7 +32,9 @@ class LoginF extends React.Component {
             this.props.location.state.opt == 'login' ? opt = true : opt = false;
             this.setState({ loginTable: opt });
         }
+
     }
+     
     componentWillReceiveProps(nextProps) {
         debugger;
         if (this.state.loading) {
@@ -50,6 +52,7 @@ class LoginF extends React.Component {
         }
 
     }
+
     handleLoginSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {

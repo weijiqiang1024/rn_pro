@@ -11,36 +11,6 @@
 
 
 export const pubFunc = {
-    
-    /**
-     * //城市机构
-     * 
-     * @param {any} area 
-     * @returns 
-     */
-    areaOptions: (area) => {
-        //城市转换
-        let areaOptions = [];
-        if (area) {
-            let areaArray = area.clone() || [];
-            //判断父机构是否是市级机构，是则push到options数组
-            for (let i = areaArray.length - 1; i >= 0; i--) {
-                if (areaArray[i].parent_area_code.length == 2) {
-                    areaOptions.push({ value: areaArray[i].area_code, label: areaArray[i].area_name, children: [] });
-                    areaArray.splice(i, 1);
-                }
-            }
-            //若不是父机构，则取父机构的后四位进行匹配放到对应的市级机构的children节点
-            for (let m = areaArray.length - 1; m >= 0; m--) {
-                for (let n = areaOptions.length - 1; n >= 0; n--) {
-                    if (areaArray[m].parent_area_code == areaOptions[n].value) {
-                        areaOptions[n].children.push({ value: areaArray[m].area_code, label: areaArray[m].area_name });
-                    }
-                }
-            }
-        }
-        return areaOptions;
-    },
     /**
      *
      * @param {any} arr 

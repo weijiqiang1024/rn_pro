@@ -64,18 +64,24 @@ export class mainPage extends React.Component {
     }
 
     componentDidMount() {
-
+        window.addEventListener('unload', this.handleUnload);
     }
+
+    componentWillUnmount(){
+         window.removeEventListener('unload', this.handleUnload);        
+    }
+
+    handleUnload(){
+        localStorage.removeItem('username');
+     }
 
     loginOpt = (e) => {
 
     }
 
     render() {
-
-        if (this.props.userInfo) {
-            this.state.userName = this.props.userInfo.username;
-        }
+        debugger;
+        let userName = localStorage.getItem('username');
 
         return (
             <section>
@@ -97,7 +103,7 @@ export class mainPage extends React.Component {
                         </div>
                         <div className="header_button" style={{display:'flex',alignItems:'center'}}>
                             <a className={styles.Aa}>Aa</a>
-                            {this.state.userName ?
+                            {!userName ?
                                 <span>
                                     <Link to={{ pathname: '/login', state: { opt: 'login' } }} className={styles.Aa} onClick={this.loginOpt}>登录</Link>
                                     <Button type="danger" ghost className="register"><Link to={{ pathname: '/login', state: { opt: 'register' } }}>

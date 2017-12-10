@@ -1,6 +1,4 @@
-/**
- * Created by zll on 2017/10/11.
- */
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { message } from 'antd';
@@ -64,9 +62,6 @@ function mapStateToProps(state) {
     return {
         loginRet: state.Login.loginRet,
         userInfo: state.Login.userInfo,
-        msgTip: state.MsgTip.msg,
-        sysDic: state.Share.sysDic,
-        siteGroup: state.Share.monitorSiteGroup
     }
 }
 
@@ -74,21 +69,6 @@ function mapDispatchToProps(dispatch) {
     return {
         submitClick: (param) => {
             dispatch(act.loginSubmit(param))
-        },
-        querySysdic: (param) => {
-            dispatch(shareAct.querySysdic(param))
-        },
-        queryArea: (param) => {
-            dispatch(shareAct.queryArea(param))
-        },
-        queryFactor: (param) => {
-            dispatch(shareAct.queryFactor(param))
-        },
-        queryMonitorSite: (param) => {
-            dispatch(shareAct.querySysSite(param))
-        },
-        queryMonitorSiteGroup: (param) => {
-            dispatch(shareAct.querySiteGroup(param))
         },
     }
 }
