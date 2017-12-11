@@ -29,7 +29,7 @@ export default function Store(initialState) {
         initialState,
         compose(
             applyMiddleware(sagaMiddleware, loggerMiddleware),
-            persistState(['Login', 'Share'], { slicer: myCustomSlicer }),
+            persistState(['Share'], { slicer: myCustomSlicer }),
             window.devToolsExtension ? window.devToolsExtension() : f => f
         ));
     //运行所有已经注册的saga
